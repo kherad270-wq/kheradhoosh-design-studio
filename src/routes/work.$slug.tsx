@@ -38,7 +38,7 @@ function CaseStudy() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
   const idx = PROJECTS.findIndex((p) => p.slug === project.slug);
-  const next = PROJECTS[(idx + 1) % PROJECTS.length];
+  const next = PROJECTS[(idx + 1) % PROJECTS.length]!;
 
   const blocks: { label: { fa: string; en: string }; body: string }[] = [
     { label: { fa: "مسئله", en: "Problem" }, body: L(project.problem, lang) },
@@ -120,7 +120,7 @@ function CaseStudy() {
           </h2>
         </Reveal>
         <ul className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-          {project.results.map((r, i) => (
+          {project.results.map((r: { fa: string; en: string }, i: number) => (
             <Reveal as="li" key={r.en} delay={0.05 * i}>
               <p className="text-base leading-relaxed">
                 <span className="text-accent">— </span>
