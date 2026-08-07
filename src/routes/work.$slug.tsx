@@ -30,7 +30,7 @@ export const Route = createFileRoute("/work/$slug")({
       links: [{ rel: "canonical", href: `/work/${params.slug}` }],
     };
   },
-  component: CaseStudy;
+  component: CaseStudy,
 });
 
 function CaseStudy() {
