@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { PageHeader, Section } from "@/components/site/Section";
+import { PageHeader } from "@/components/site/Section";
 import { Timeline } from "@/components/site/Timeline";
 
 export const Route = createFileRoute("/experience")({
@@ -29,12 +29,12 @@ function ExperiencePage() {
   return (
     <>
       <PageHeader eyebrow={t("experience.eyebrow")} title={t("experience.title")} />
-      <Section labelledBy="timeline-heading">
+      <section aria-labelledby="timeline-heading" className="container-editorial pb-16">
         <h2 id="timeline-heading" className="sr-only">
           {t("experience.title")}
         </h2>
         <Timeline />
-      </Section>
+      </section>
     </>
   );
 }
